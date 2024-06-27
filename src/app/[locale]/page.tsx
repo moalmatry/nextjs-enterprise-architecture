@@ -1,6 +1,6 @@
 import { ExampleClient } from '@/Components/ExampleClient';
 import { LocaleParamsProps } from '@/Types';
-import { useTranslate } from '@/hooks/useTranslate';
+import { useTranslate } from '@/Hooks/useTranslate';
 import Link from 'next/link';
 
 const i18nNameSpaces = ['Home', 'Common'];
