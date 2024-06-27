@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
 // Try to sue Server component as much as possible
-import { I18nextProvider } from "react-i18next";
-import initTranslations from "@/app/i18n";
-import { createInstance } from "i18next";
-import { TranslationsProviderProps } from "@/Types";
+import { I18nextProvider } from 'react-i18next';
+import initTranslations from '@/app/i18n';
+import { createInstance } from 'i18next';
+import { TranslationsProviderProps } from '@/Types';
 
 export default function TranslationsProvider({
   children,
