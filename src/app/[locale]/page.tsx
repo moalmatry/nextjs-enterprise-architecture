@@ -1,20 +1,13 @@
-import { ExampleClient } from '@/Components/ExampleClient';
-import { LocaleParamsProps } from '@/Types';
-import { useTranslate } from '@/Hooks/useTranslate';
-import Link from 'next/link';
+'use client';
+import { useTranslations } from 'next-intl';
 
-const i18nNameSpaces = ['Home', 'Common'];
-
-export default async function Home({ params: { locale } }: LocaleParamsProps) {
-  const { t, resources: _ } = await useTranslate(locale, i18nNameSpaces);
-
-  const userName = 'Mohamed';
+export default function Home() {
+  const t = useTranslations('HomePage');
 
   return (
     <main className="flex justify-center items-center flex-col m-auto">
-      <h1>{t('header')}</h1>
-      <ExampleClient text={t('subheader', { userName })} />
-      <Link href="/about-us">{t('Common:about_us')}</Link>
+      <h1>This is boiler blade project</h1>
+      <h1>{t('hello')}</h1>
     </main>
   );
 }

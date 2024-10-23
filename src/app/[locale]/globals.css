@@ -11,8 +11,105 @@
 @media (prefers-color-scheme: dark) {
 }
 
-body {
+html {
+  scroll-behavior: unset;
 }
 
+body {
+  scroll-behavior: unset;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  /* Customize the scrollbar thumb */
+  background-color: #292929;
+}
 @layer utilities {
+  .spinner {
+    margin: 3.2rem auto 1.6rem;
+    width: 60px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 8px solid theme('colors.gray.950');
+    border-right-color: theme('colors.gray.100');
+    animation: rotate 1s infinite linear;
+  }
+
+  .spinner-mini {
+    margin: 0;
+    width: 20px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 2px solid theme('colors.gray.950');
+    border-right-color: theme('colors.gray.100');
+    animation: rotate 1s infinite linear;
+  }
+
+  @keyframes rotate {
+    to {
+      transform: rotate(1turn);
+    }
+  }
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  height: 585px;
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.player-wrapper {
+  position: relative;
+}
+
+.react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.react-player__preview {
+  width: 400px !important;
+  height: 589px !important;
+}
+
+/* .react-player__shadow {
+  background-color: azure;
+
+  position: absolute;
+  top: 0;
+} */
+
+/* .react-player__play-icon {
+  background-color: yellowgreen;
+  position: absolute;
+  top: 50%;
+} */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
 }
