@@ -1,33 +1,33 @@
-import type { Metadata } from 'next';
-import { Rubik } from 'next/font/google';
-import './globals.css';
+import type { Metadata } from "next";
+import { Rubik } from "next/font/google";
+import "./globals.css";
 
-import { AudioProvider } from '@/providers/AudioProvider';
-import AuthProvider from '@/providers/AuthProvider';
-import ReactQueryProvider from '@/providers/ReactQueryProvider';
-import { ThemeProvider } from '@/providers/ThemeProvider';
-import ToastProvider from '@/providers/ToastProvider';
-import { Analytics } from '@vercel/analytics/react';
-import { SpeedInsights } from '@vercel/speed-insights/next';
-import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
+import { AudioProvider } from "@/providers/AudioProvider";
+import AuthProvider from "@/providers/AuthProvider";
+import ReactQueryProvider from "@/providers/ReactQueryProvider";
+import { ThemeProvider } from "@/providers/ThemeProvider";
+import ToastProvider from "@/providers/ToastProvider";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
 
-const inter = Rubik({ subsets: ['latin', 'arabic'] });
+const inter = Rubik({ subsets: ["latin", "arabic"] });
 
 export const metadata: Metadata = {
   title: {
-    default: '',
-    template: ''
+    default: "",
+    template: ""
   },
   description:
-    'digital platform that helps people connect with people in their local community.',
+    "digital platform that helps people connect with people in their local community.",
   twitter: {
-    card: 'summary_large_image'
+    card: "summary_large_image"
   },
   openGraph: {
     images: [
       {
-        url: ''
+        url: ""
       }
     ]
   }
@@ -47,12 +47,10 @@ export default async function RootLayout({
   console.log(translate);
   return (
     <html suppressHydrationWarning lang={locale}>
-      <body
-        className={`${inter.className} dark:bg-black bg-gray-50 text-gray-900 dark:text-white dark:text-gray-0 border-gray-100 dark:border-gray-800`}
-      >
+      <body className={`${inter.className}`}>
         <NextIntlClientProvider messages={translate}>
           <AudioProvider>
-            <ThemeProvider>
+            <ThemeProvider attribute="class" defaultTheme="system">
               <ReactQueryProvider>
                 <ToastProvider>
                   <AuthProvider>{children}</AuthProvider>
